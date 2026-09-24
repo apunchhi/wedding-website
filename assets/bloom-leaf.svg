@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="blade" x1="16" y1="16" x2="2" y2="12" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8fa06b" />
+      <stop offset="1" stop-color="#6c7d4e" />
+    </linearGradient>
+    <!-- pointed leaf with a midrib, threaded in beside the blooms -->
+    <g id="leaf">
+      <path d="M16 16C11.4 10.6 6 9.2 1.6 11.2 2.8 16.4 8.4 20 14.2 18.6 15 18.4 15.6 17.4 16 16z" fill="url(#blade)" />
+      <path d="M14.6 17.9C10.9 15.3 6.7 13.2 2.6 12.4" stroke="#57683c" stroke-opacity=".55" stroke-width=".7" fill="none" stroke-linecap="round" />
+    </g>
+  </defs>
+
+  <use href="#leaf" />
+  <use href="#leaf" transform="translate(32 0) scale(-1 1)" />
+</svg>
