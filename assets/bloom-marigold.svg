@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <radialGradient id="ringOuter" cx="50%" cy="34%" r="62%">
+      <stop offset="0" stop-color="#e8901f" />
+      <stop offset="1" stop-color="#cf6f14" />
+    </radialGradient>
+    <radialGradient id="ringMid" cx="50%" cy="38%" r="58%">
+      <stop offset="0" stop-color="#f7bb4e" />
+      <stop offset="1" stop-color="#ea9a26" />
+    </radialGradient>
+    <radialGradient id="ringInner" cx="50%" cy="44%" r="56%">
+      <stop offset="0" stop-color="#fde5a2" />
+      <stop offset="1" stop-color="#f6c25c" />
+    </radialGradient>
+
+    <!-- Spoon-shaped marigold petal, rounded tip, radiating from the centre.
+         Each ring gets its own length so the bloom stacks into a pom-pom. -->
+    <path
+      id="p-lg"
+      d="M16 16C11 13 9.5 8 12 4.4 13.4 2.4 18.6 2.4 20 4.4 22.5 8 21 13 16 16Z"
+    />
+    <path
+      id="p-md"
+      d="M16 16C12.4 13.8 11.3 10.2 13.1 7.6 14.1 6.2 17.9 6.2 18.9 7.6 20.7 10.2 19.6 13.8 16 16Z"
+    />
+    <path
+      id="p-sm"
+      d="M16 16C13.6 14.6 12.9 12.2 14.1 10.4 14.8 9.5 17.2 9.5 17.9 10.4 19.1 12.2 18.4 14.6 16 16Z"
+    />
+  </defs>
+
+  <!-- The stroke is what makes individual petals read; without it the rings
+       merge into one solid disc. -->
+  <g fill="url(#ringOuter)" stroke="#b45d0d" stroke-width=".55" stroke-linejoin="round">
+    <use href="#p-lg" />
+    <use href="#p-lg" transform="rotate(40 16 16)" />
+    <use href="#p-lg" transform="rotate(80 16 16)" />
+    <use href="#p-lg" transform="rotate(120 16 16)" />
+    <use href="#p-lg" transform="rotate(160 16 16)" />
+    <use href="#p-lg" transform="rotate(200 16 16)" />
+    <use href="#p-lg" transform="rotate(240 16 16)" />
+    <use href="#p-lg" transform="rotate(280 16 16)" />
+    <use href="#p-lg" transform="rotate(320 16 16)" />
+  </g>
+
+  <g fill="url(#ringMid)" stroke="#c9761a" stroke-width=".5" stroke-linejoin="round">
+    <use href="#p-md" transform="rotate(20 16 16)" />
+    <use href="#p-md" transform="rotate(71.4 16 16)" />
+    <use href="#p-md" transform="rotate(122.9 16 16)" />
+    <use href="#p-md" transform="rotate(174.3 16 16)" />
+    <use href="#p-md" transform="rotate(225.7 16 16)" />
+    <use href="#p-md" transform="rotate(277.1 16 16)" />
+    <use href="#p-md" transform="rotate(328.6 16 16)" />
+  </g>
+
+  <g fill="url(#ringInner)" stroke="#dd9520" stroke-width=".45" stroke-linejoin="round">
+    <use href="#p-sm" transform="rotate(36 16 16)" />
+    <use href="#p-sm" transform="rotate(108 16 16)" />
+    <use href="#p-sm" transform="rotate(180 16 16)" />
+    <use href="#p-sm" transform="rotate(252 16 16)" />
+    <use href="#p-sm" transform="rotate(324 16 16)" />
+  </g>
+
+  <circle cx="16" cy="16" r="1.5" fill="#c2700f" />
+</svg>
