@@ -1,7 +1,7 @@
 export const QUIZ_DATA = {
   title: "Are You Amar or Ananya?",
   intro:
-    "Amar and Ananya are like Yin and Yang: different in all the right ways, and better together.\nTake our quiz to find our which half of this couple is your personality twin.",
+    "Amar and Ananya are like Yin and Yang: different in all the right ways, and better together.\nTake our quiz to find out which half of this couple is your personality twin.",
   questions: [
     {
       id: "q1",
