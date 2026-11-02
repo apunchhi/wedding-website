@@ -11,8 +11,6 @@
   --marigold: #efa02c;
   --marigold-deep: #d9821b;
   --mustard: #e8c23a;
-  --wisteria: #a483c4;
-  --wisteria-deep: #7e5c9e;
   --sage: #7e8f5e;
   --terracotta: #b93d2b;
 
@@ -25,7 +23,6 @@
   --header-h: 4.5rem;
   --motion-duration: 760ms;
   --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --motion-distance: 2rem;
 
   --serif: "Cormorant Garamond", Georgia, serif;
   --script: "Parisienne", "Cormorant Garamond", cursive;
@@ -1259,10 +1256,6 @@ a:hover {
   gap: 1.5rem;
 }
 
-#schedule .days {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
 .day {
   background: var(--card);
   border: 1px solid var(--line);
@@ -1824,10 +1817,6 @@ a:hover {
   }
 
   .days {
-    grid-template-columns: 1fr;
-  }
-
-  #schedule .days {
     grid-template-columns: 1fr;
   }
 }

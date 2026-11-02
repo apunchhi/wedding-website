@@ -1,98 +1,75 @@
 # Amar & Ananya — Wedding Website
 
-Zero-build informational site: semantic HTML, CSS, and vanilla JavaScript. No
-React, Node, package manager, backend, or RSVP system.
+Static site in plain HTML, CSS, and vanilla JS. No build step and no
+dependencies. Pushing to `main` deploys it through GitHub Pages (repo root).
 
 ## Preview
 
-```powershell
-powershell -ExecutionPolicy Bypass -File .\serve.ps1
+```sh
+python3 -m http.server 8000
 ```
 
-Open http://localhost:8000/. Pass another port with `-Port 8080`.
+Open http://localhost:8000/. Use a server instead of opening the file directly,
+because `quiz.js` is an ES module and browsers block modules on `file://`.
+On Windows, `serve.ps1` does the same job.
 
-The server is only for local preview. Deployment is the root `index.html`,
-`styles.css`, `script.js`, and `assets/` directory on any static host.
-
-## Structure
+## Files
 
 | Path | Purpose |
 | --- | --- |
-| `index.html` | Complete page markup and guest-facing copy |
-| `styles.css` | Layout, palette, responsive behavior, and motion |
-| `script.js` | Nav, hero sizing/parallax, reveals, forecast, and gallery |
-| `assets/` | Web images, bloom SVGs, and downloadable card |
-| `photos-src/` | Full-resolution originals; do not deploy |
-| `content.md` | Copy source of truth; sync edits into `index.html` |
-| `_herocrop.ps1` | Regenerates `assets/hero-scene-web.jpg` |
-| `serve.ps1` | Dependency-free local HTTP preview |
+| `index.html` | All markup and guest-facing copy |
+| `styles.css` | Palette, layout, responsive rules, motion |
+| `script.js` | Nav, hero sizing/parallax, garlands, reveals, live forecast |
+| `quiz.js` / `quiz-data.js` | Couple quiz logic / questions, scores, results |
+| `content.md` | Copy source of truth and open questions; mirror edits into `index.html` |
+| `assets/` | Hero image, bloom SVGs, downloadable card, `photos/web/` library |
+| `_herocrop.ps1` | Regenerates `assets/hero-scene-web.jpg` from the card |
+| `photos-src/`, `ananya-website-notes.md` | Originals and planner notes; gitignored |
 
-Set `PLANNER_WHATSAPP` near the top of `script.js` to digits only, including
-country code and no `+`.
+## Common edits
 
-## Cinematic behavior
+- **Planner WhatsApp:** set `PLANNER_WHATSAPP` at the top of `script.js` to
+  digits only, country code included, no `+`.
+- **Quiz:** edit `quiz-data.js`. Scores of `>= 2` give Ananya and `<= -2` give
+  Amar; anything else is the blend result. If you change questions, bump
+  `QUIZ_VERSION` in `quiz.js` so submissions to the Apps Script stay separable.
+- **Photos:** put an optimized copy in `assets/photos/web/` and keep the
+  original in `photos-src/`. The web folder is a library, and not every photo
+  in it appears on the page. To swap in a photo for the Lookbook or FAQ
+  placeholder:
 
-JavaScript progressively adds:
+  ```html
+  <figure class="editorial-media" data-reveal="media">
+    <img src="assets/photos/web/example.jpg" alt="..." width="..." height="..." loading="lazy" />
+  </figure>
+  ```
 
-- a staged hero entrance
-- slow, desynchronized garland sway that curves down each string
-- restrained desktop hero parallax
-- directional section reveals matching each editorial row
-- sticky editorial media on desktop
-- an active navigation marker
-- a live 16-day Open-Meteo forecast
+## Layout
 
-The page is complete and readable if JavaScript or the forecast fails.
-`prefers-reduced-motion: reduce` disables entrances, sway, parallax, and smooth
-scrolling while preserving every control.
+Sections alternate `--paper` / `--paper-lift` backgrounds. On desktop, each
+editorial row puts media on one side and copy on the other. At 900px and below,
+rows stack into a single column.
+
+1. Story: copy left, photos right
+2. Celebrations: full-width, two date cards
+3. Travel & Stay: copy left, weather and live forecast right
+4. Lookbook: placeholder left
+5. FAQ: placeholder left
+6. Couple Quiz: centered
+
+The page reads fine without JS. The forecast hides itself if Open-Meteo fails.
+`prefers-reduced-motion` turns off entrances, sway, and parallax.
 
 ## Garlands and hero
 
-The fixed garland layer uses six strings per side, ordered outermost first.
-Both sides share the same breakpoints, so their visible counts remain equal.
-The inner 66px slot is deliberately clear of the 1120px content column.
-
-The first string on each side is the longest marigold (58vh).
-`setupHero()` in `script.js` measures its tip after image/font load and on
-resize, then sizes the hero image so both bottom edges meet at scroll position
-zero. Sway never changes string length.
-
-A string is one element painting a repeating bloom background, so on its own it
-can only rotate rigidly. `setupGarlands()` re-tiles each string as one
-`.garland-bloom` node per bloom, carrying `--i` and `--n`; `styles.css` derives
-each node's throw from the square of its depth and lags it behind the node
-above, so the string bends rather than leaning. The outermost string on each
-side hangs flush with the viewport edge, so it swings inward only. The
-background version stays as the baseline for no-JS and reduced motion.
-
-`assets/hero-scene-web.jpg` is cut from `assets/save-the-date.png` by
-`_herocrop.ps1`: `x 80–1620`, `y 1620–2555`, output 1400px wide.
-
-## Editorial sections
-
-Desktop sections alternate image and copy columns:
-
-1. Story — image right
-2. Celebrations — full-width copy and two date tiles
-3. Travel & Stay — full-width copy with weather below
-4. The Lookbook — placeholder left
-5. FAQ
-6. Our Couple Quiz — full-width centered introduction
-
-Backgrounds alternate between `--paper` and `--paper-lift`. At 900px and below,
-editorial rows stack into one column and horizontal reveals become vertical.
-
-Replace a placeholder with:
-
-```html
-<figure class="editorial-media" data-reveal="media">
-  <img src="assets/photos/web/example.jpg" alt="..." width="..." height="..." />
-</figure>
-```
-
-## Photo storage
-
-`photos-src/` contains originals and stays outside deployment. Only optimized
-copies in `assets/photos/web/` are served. The alternate name-order card also
-lives in `photos-src/`; the downloadable Amar-first version is
-`assets/save-the-date.png`.
+- Each side has six garland strings, outermost first. The first string on each
+  side is the longest marigold (`--g-max: 58vh`).
+- `setupHero()` sizes the hero image so its bottom edge lines up with that
+  marigold's tip at scroll 0. It recalculates after the image and fonts load
+  and on every resize.
+- `setupGarlands()` splits each string into one `.garland-bloom` per bloom,
+  each carrying `--i` and `--n`. `styles.css` uses those values to make the
+  sway grow with depth, so strings bend instead of swinging stiffly.
+  Reduced-motion users get the single-background version.
+- `_herocrop.ps1` cuts `x 80–1620, y 1620–2555` out of
+  `assets/save-the-date.png` and saves the result at 1400px wide.

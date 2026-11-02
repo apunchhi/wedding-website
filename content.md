@@ -49,7 +49,7 @@ Until then the site only shows the two dates (19 & 20 Nov 2027) and a “coming 
 ### Known from AA
 Our families will provide accommodation for all guests for November 19th and
 20th, 2027 at the
-[Hyatt Centric](https://www.hyatt.com/hyatt-centric/en-US/ixcct-hyatt-centric-sector-17-chandigarh?src=corp_lclb_google_seo_ixcct&utm_source=google&utm_medium=organic&utm_campaign=lmr)
+[Hyatt Centric](https://www.hyatt.com/hyatt-centric/en-US/ixcct-hyatt-centric-sector-17-chandigarh)
 in Sector 17, Chandigarh.
 
 Our wedding planners will reach out directly to collect RSVP and travel
@@ -98,13 +98,13 @@ Keep Ananya’s FAQ **verbatim** on the site. The Travel weather block expands i
 
 Do **not** invent train timings. Chandigarh as an e-Visa airport is from the official FAQ, not guesswork.
 
-## 5. Things to Do — TBT / AA
+## 6. Things to Do — TBT / AA
 Cut from the site. Ananya & Amar had nothing written yet and a placeholder
 section with three empty cards read worse than no section. Ananya's notes still
 list the wanted buckets (restaurants, attractions, shopping, hidden gems,
 activities) — rebuild the section if they send real picks.
 
-## 6. FAQs
+## 7. FAQs
 
 ### Live on the site (AA answered)
 - **Do I need to book my own hotel?** No. Families covering 19–20 Nov at Hyatt Centric Sector 17. RSVP + flights to planners. No guest payment. Live on the site.
@@ -119,38 +119,31 @@ activities) — rebuild the section if they send real picks.
 - Can I book rooms at the wedding hotels before and/or after the wedding weekend?
 - Is there a Wedding Registry?
 
-## 7. Our Couple Quiz
+## 8. Our Couple Quiz
 
 ### Are You Amar or Ananya?
 
 Amar and Ananya are like Yin and Yang: different in all the right ways, and better together.  
-Take our quiz to find our which half of this couple is your personality twin.
+Take our quiz to find out which half of this couple is your personality twin.
 
 ## Photo assets
 
 Full-resolution originals are preserved in `photos-src/`, outside the deployed
 site files. There is no standalone Photos section.
 
-Curated web copies live in `assets/photos/web/`:
-- City Hall: kiss, window portrait, dip, subway
-- Proposal on the Mumbai rooftop
-- Rooftop kiss (`DSCF1490.JPG`), used beside Our Story
-- Joshua Tree
-- Indian wedding
-- Night out
-- Mumbai rooftop portrait
-- Matching “married in New York” shirts
-- Photo booth
-- Street selfie
+Web copies live in `assets/photos/web/`. On the page now:
+- Our Story: City Hall window (`city-hall-window.jpg`), six-photo collage
+  (`collage/`), and the Mumbai engagement (`DSCF1490_cropped.jpg`), each with
+  a caption
+- Quiz: matching NYC shirts (`quiz.jpg`)
 
-Additional JPG/JPEG originals in `photos-src/` are preserved but omitted from
-the gallery to keep it edited rather than exhaustive. The name-swapped
-save-the-date variant is there too; the live card (Amar names first) is
-`assets/save-the-date.png`.
+The other web copies (City Hall kiss/dip, subway, proposal, rooftop kiss,
+Joshua Tree, Indian wedding, night out, Mumbai rooftop, married-in-New-York,
+photo booth, street selfie, `collage/p8091419.jpg`) are not used on the page.
+They are kept for the Lookbook. The name-swapped save-the-date variant is in
+`photos-src/`; the live card (Amar named first) is `assets/save-the-date.png`.
 
-Captions: none supplied, so the gallery uses descriptive alt text only.
-
-## 8. Additional — TBC
+## 9. Additional — TBC
 - Personal note / message for guests
 - Any special instructions or requests
 
