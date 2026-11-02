@@ -1139,40 +1139,6 @@ body.nav-open .planner-contact {
   transform: scale(1);
 }
 
-.photo-placeholder {
-  display: grid;
-  aspect-ratio: 4 / 5;
-  place-content: center;
-  gap: 1rem;
-  padding: 2rem;
-  color: var(--muted);
-  text-align: center;
-  background:
-    linear-gradient(135deg, transparent 49.8%, var(--line) 50%, transparent 50.2%),
-    linear-gradient(45deg, transparent 49.8%, var(--line) 50%, transparent 50.2%),
-    radial-gradient(circle at 50% 30%, rgba(239, 160, 44, 0.16), transparent 48%),
-    var(--card);
-}
-
-.photo-placeholder-mark {
-  font-family: var(--serif);
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  letter-spacing: 0.08em;
-}
-
-.photo-placeholder-mark em {
-  color: var(--marigold-deep);
-  font-family: var(--script);
-  font-style: normal;
-}
-
-.photo-placeholder figcaption {
-  font-size: var(--fs-eyebrow);
-  font-weight: 600;
-  letter-spacing: var(--track-eyebrow);
-  text-transform: uppercase;
-}
-
 .story .editorial-copy p {
   margin: 0 0 1.15rem;
   text-wrap: pretty;
@@ -1191,13 +1157,6 @@ body.nav-open .planner-contact {
 
 .story blockquote p {
   margin: 0;
-}
-
-.coming-soon {
-  margin: 1.25rem 0 0 !important;
-  text-align: center;
-  color: var(--muted);
-  font-style: italic;
 }
 
 .faq details p + p {
@@ -1913,10 +1872,6 @@ body.nav-open .planner-contact {
 
   .travel-weather .cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .photo-placeholder {
-    aspect-ratio: 16 / 10;
   }
 
   .days {

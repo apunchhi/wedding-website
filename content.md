@@ -77,7 +77,7 @@ Keep Ananya’s FAQ **verbatim** on the site. The Travel weather block expands i
   - Climate-Data.org Chandigarh: Nov 26.0 / 12.2°C, 6 mm, 1 rain day, 9 sun hours, 55% RH.
   - Weather & Climate: 27 / 13°C, 7.5 mm.
   - WorldWeatherOnline: 26 / 14°C, 6 mm, 1 rain day.
-- **Air:** Gentle wording on the site: “The air can turn a little hazy this time of year. If you’re sensitive to air quality, you may like to pack a mask.” Cause is crop burning; not named on the page. No AQI numbers.
+- **Air:** Gentle wording on the site: “If you’re sensitive to air quality, you may like to pack a mask.” Cause is crop burning; not named on the page. No AQI numbers.
 - **Live forecast:** Open-Meteo, Chandigarh coordinates 30.7333 / 76.7794,
   16-day window, no API key. Hidden if the API fails. On 3–4 November 2027 the
   wedding dates should enter the forecast window and highlight automatically.
@@ -131,5 +131,7 @@ They are kept for the future Lookbook. The name-swapped save-the-date variant is
 - Personal note / message for guests
 - Any special instructions or requests
 
-## Contact — TBC
-Planner contact + guest email still needed. Not inventing `hello@example.com` as real.
+## Contact — planners
+Two by Two Celebrations · rsvp@twobytwo.in (floating Email button + contact FAQ).
+**TODO(launch):** call / WhatsApp number still missing; `PLANNER_WHATSAPP` is
+Amar's number as a placeholder.

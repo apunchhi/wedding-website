@@ -70,7 +70,9 @@ rows stack into a single column.
 
 **Lookbook: on hold.** It was removed on 1 Nov 2026 until we have the
 lookbook. To bring it back, add a `<section id="lookbook">` between Travel and
-FAQ, add the nav link, and re-alternate the `section-alt` backgrounds.
+FAQ, add the nav link, and re-alternate the `section-alt` backgrounds. The old
+"A & A" placeholder styles (`.photo-placeholder`) were removed; recover them
+with `git show 2121975:styles.css` if needed.
 
 The page reads fine without JS. The forecast hides itself if Open-Meteo fails.
 `prefers-reduced-motion` turns off entrances, sway, and parallax.
