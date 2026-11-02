@@ -3,7 +3,8 @@
 
   const WEDDING_DATES = ["2027-11-19", "2027-11-20"];
   const CHANDIGARH = { lat: 30.7333, lon: 76.7794 };
-  const PLANNER_WHATSAPP = "";
+  // TODO(launch): placeholder is Amar's number; replace with the planners' before going live
+  const PLANNER_WHATSAPP = "18477700511";
   const reduceMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   ).matches;
@@ -60,8 +61,8 @@
       "Hi — I'm a guest at Amar and Ananya's wedding (19–20 Nov 2027). I'd like to share RSVP / flight details."
     );
     link.href = `https://wa.me/${digits}?text=${text}`;
-    link.removeAttribute("aria-disabled");
-    link.removeAttribute("title");
+    link.target = "_blank";
+    link.hidden = false;
   }
 
   function setupHero() {
@@ -352,19 +353,7 @@
           list.append(item);
         });
 
-        const credit = document.createElement("p");
-        credit.className = "sources forecast-credit";
-        credit.append("Next 16 days from ");
-        const link = document.createElement("a");
-        link.href = "https://open-meteo.com/";
-        link.rel = "noopener noreferrer";
-        link.textContent = "Open-Meteo";
-        credit.append(
-          link,
-          " (no API key; ECMWF / DWD). Wedding-weekend days light up once they’re inside that window."
-        );
-
-        forecast.replaceChildren(heading, now, note, list, credit);
+        forecast.replaceChildren(heading, now, note, list);
         forecast.hidden = false;
         forecast.classList.add("is-visible");
       })

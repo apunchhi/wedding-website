@@ -24,6 +24,13 @@
   --motion-duration: 760ms;
   --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
 
+  /* type scale: prose, subheading, small print, all-caps labels */
+  --fs-prose: 1.3rem;
+  --fs-h3: 1.5rem;
+  --fs-small: 0.82rem;
+  --fs-eyebrow: 0.75rem;
+  --track-eyebrow: 0.18em;
+
   --serif: "Cormorant Garamond", Georgia, serif;
   --script: "Parisienne", "Cormorant Garamond", cursive;
   --sans: "Karla", system-ui, -apple-system, sans-serif;
@@ -43,7 +50,9 @@ html {
 
 body {
   margin: 0;
-  overflow-x: hidden;
+  /* clip, not hidden: hidden makes body a scroll container, which un-sticks
+     the header */
+  overflow-x: clip;
   font-family: var(--sans);
   font-size: 1.0625rem;
   line-height: 1.7;
@@ -610,21 +619,75 @@ a:hover {
   color: #fff;
 }
 
-.btn-whatsapp {
-  gap: 0.5rem;
+/* ---------- Floating planner contact ---------- */
+
+.planner-contact {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.fab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-width: 9.5rem;
+  min-height: 3.25rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(59, 50, 43, 0.22);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.fab[hidden] {
+  display: none;
+}
+
+.fab:hover,
+.fab:focus-visible {
+  transform: translateY(-2px);
+}
+
+.fab-email {
+  background: var(--marigold-deep);
+}
+
+.fab-email:hover {
+  background: var(--terracotta);
+}
+
+.fab-whatsapp {
   background: #128c7e;
-  border-color: #0e6e63;
-  color: #fff;
 }
 
-.btn-whatsapp:hover {
+.fab-whatsapp:hover {
   background: #0e6e63;
-  color: #fff;
 }
 
-.btn-whatsapp[aria-disabled="true"] {
-  opacity: 0.55;
-  pointer-events: none;
+body.nav-open .planner-contact {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fab {
+    transition: none;
+  }
+
+  .fab:hover,
+  .fab:focus-visible {
+    transform: none;
+  }
 }
 
 .stay-copy {
@@ -641,6 +704,19 @@ a:hover {
   margin: 0;
 }
 
+.stay-block {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.stay-block h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
 #travel .editorial-row {
   grid-template-columns: 1fr;
   row-gap: clamp(2rem, 4vw, 5rem);
@@ -649,9 +725,6 @@ a:hover {
 #travel .editorial-copy {
   grid-column: 1;
   grid-row: 1;
-  font-family: var(--serif);
-  font-size: 1.3rem;
-  line-height: 1.6;
 }
 
 #travel .editorial-copy h2 {
@@ -660,25 +733,6 @@ a:hover {
 
 #travel .editorial-copy h2::after {
   margin-inline: auto;
-}
-
-.stay-actions {
-  display: flex;
-  grid-column: 1 / -1;
-  justify-content: center;
-  margin-top: 0.25rem !important;
-}
-
-.stay-actions .btn-whatsapp {
-  min-height: 57px;
-  gap: 0.65rem;
-  padding: 0.91rem 1.95rem;
-  font-size: 1.014rem;
-}
-
-.stay-actions .btn-whatsapp svg {
-  width: 23px;
-  height: 23px;
 }
 
 /* The landscape band of the illustrated card (couple, tractor, mustard field),
@@ -799,6 +853,37 @@ a:hover {
   background-position: center;
 }
 
+/* a bloom either side of the main section headings, a different flower per
+   section. The heading shrinks to its text so the blooms hug the words; fixed
+   line-height keeps them centred on the first line. */
+.editorial-copy > h2,
+.quiz-intro > h2 {
+  --h2-bloom: 1.05em;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  padding-inline: calc(var(--h2-bloom) + 0.65em);
+  line-height: 1.2;
+  background:
+    var(--h2-flower) left top calc((1.2em - var(--h2-bloom)) / 2) /
+      var(--h2-bloom) no-repeat,
+    var(--h2-flower) right top calc((1.2em - var(--h2-bloom)) / 2) /
+      var(--h2-bloom) no-repeat;
+}
+
+.section {
+  --h2-flower: url("assets/bloom-marigold.svg");
+}
+
+#story,
+#faq {
+  --h2-flower: url("assets/bloom-wisteria.svg");
+}
+
+#travel {
+  --h2-flower: url("assets/bloom-mogra.svg");
+}
+
 .section p {
   margin: 0 0 1rem;
 }
@@ -840,6 +925,9 @@ a:hover {
 
 .editorial-copy {
   min-width: 0;
+  font-family: var(--serif);
+  font-size: var(--fs-prose);
+  line-height: 1.6;
 }
 
 .editorial-copy .section-intro {
@@ -866,7 +954,7 @@ a:hover {
   padding: 0.7rem 0.9rem 0.75rem;
   border-top: 1px solid var(--line);
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: var(--fs-small);
   line-height: 1.45;
   text-align: center;
   text-wrap: pretty;
@@ -1010,12 +1098,6 @@ a:hover {
   font-size: 1.05rem;
 }
 
-.travel-weather .sources {
-  margin-top: 0.65rem;
-  font-size: 0.68rem;
-  line-height: 1.4;
-}
-
 .motion-ready [data-reveal] {
   opacity: 0;
   transition:
@@ -1085,16 +1167,10 @@ a:hover {
 }
 
 .photo-placeholder figcaption {
-  font-size: 0.75rem;
+  font-size: var(--fs-eyebrow);
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
-}
-
-.story .editorial-copy {
-  font-family: var(--serif);
-  font-size: 1.3rem;
-  line-height: 1.6;
 }
 
 .story .editorial-copy p {
@@ -1124,14 +1200,6 @@ a:hover {
   font-style: italic;
 }
 
-.sources {
-  margin: 1.5rem 0 0;
-  font-size: 0.82rem;
-  line-height: 1.55;
-  color: var(--muted);
-  text-align: center;
-}
-
 .faq details p + p {
   margin-top: 0.75rem !important;
 }
@@ -1154,7 +1222,7 @@ a:hover {
 .forecast > h3 {
   margin: 0;
   font-family: var(--serif);
-  font-size: clamp(1.45rem, 3vw, 1.8rem);
+  font-size: var(--fs-h3);
   font-weight: 600;
   letter-spacing: 0.04em;
 }
@@ -1227,10 +1295,6 @@ a:hover {
   font-weight: 600;
 }
 
-.forecast-credit {
-  margin-top: 0.8rem;
-}
-
 /* ---------- Schedule ---------- */
 
 #schedule .editorial-row {
@@ -1239,9 +1303,6 @@ a:hover {
 
 #schedule .editorial-copy {
   width: 100%;
-  font-family: var(--serif);
-  font-size: 1.3rem;
-  line-height: 1.6;
   text-align: center;
 }
 
@@ -1272,9 +1333,9 @@ a:hover {
 
 .day-num {
   margin: 0;
-  font-size: 0.75rem;
+  font-size: var(--fs-eyebrow);
   font-weight: 600;
-  letter-spacing: 0.24em;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
   color: var(--marigold-deep);
 }
@@ -1282,8 +1343,50 @@ a:hover {
 .day-date {
   margin: 0.35rem 0 0 !important;
   font-family: var(--serif);
-  font-size: 1.5rem;
+  font-size: var(--fs-h3);
   letter-spacing: 0.02em;
+}
+
+.events {
+  display: grid;
+  gap: 1.25rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.event h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.event p {
+  margin: 0 !important;
+  line-height: 1.4;
+}
+
+.event-time {
+  font-family: var(--sans);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--marigold-deep);
+}
+
+.event-venue {
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.schedule-note {
+  margin: 1.5rem 0 0 !important;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--muted);
 }
 
 /* ---------- Cards ---------- */
@@ -1304,7 +1407,7 @@ a:hover {
 .card h3 {
   margin: 0 0 0.6rem;
   font-family: var(--serif);
-  font-size: 1.45rem;
+  font-size: var(--fs-h3);
   font-weight: 600;
   letter-spacing: 0.03em;
 }
@@ -1335,7 +1438,7 @@ a:hover {
   cursor: pointer;
   min-height: 44px;
   font-family: var(--serif);
-  font-size: 1.2rem;
+  font-size: var(--fs-prose);
   font-weight: 600;
   list-style: none;
 }
@@ -1365,7 +1468,7 @@ a:hover {
 
 .quiz-section {
   font-family: var(--serif);
-  font-size: 1.3rem;
+  font-size: var(--fs-prose);
   line-height: 1.6;
   text-align: center;
 }
@@ -1423,9 +1526,9 @@ a:hover {
   padding-left: 0.15rem;
   color: var(--muted);
   font-family: var(--sans);
-  font-size: 0.72rem;
+  font-size: var(--fs-eyebrow);
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
 }
 
@@ -1474,9 +1577,9 @@ a:hover {
   margin-bottom: 0.45rem;
   color: var(--muted);
   font-family: var(--sans);
-  font-size: 0.7rem;
+  font-size: var(--fs-eyebrow);
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
 }
 
@@ -1655,9 +1758,9 @@ a:hover {
   margin-bottom: 0.35rem;
   color: var(--muted);
   font-family: var(--sans);
-  font-size: 0.72rem;
+  font-size: var(--fs-eyebrow);
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--track-eyebrow);
   text-transform: uppercase;
 }
 
@@ -1828,10 +1931,6 @@ a:hover {
 
   .stay-copy {
     grid-template-columns: 1fr;
-  }
-
-  .stay-actions {
-    grid-column: 1;
   }
 
   .wrap {

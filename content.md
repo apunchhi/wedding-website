@@ -36,40 +36,28 @@ In a sea of people, music, and LED lights, we ran into each other…again! We fi
 
 In November 2025, Amar proposed to Ananya on the rooftop of Quantum Park, and after many years, fate finally got its way.
 
-## 3. Schedule — TBT
-Need from planners:
-- Event names
-- Event timings
-- Event venues
+## 3. Schedule — CONFIRMED (Two by Two, 1 Nov 2026)
+Source: `planner-content.md`. Intro line: “Colour palettes and lookbooks coming soon!”
 
-Until then the site only shows the two dates (19 & 20 Nov 2027) and a “coming soon”.
+- **Fri 19 Nov:** Check-Ins & Lunch, 12:00 pm, Hyatt Regency Chandigarh ·
+  Mehendi Sundowner, 4:30 pm, Sukoon Farmhouse, New Chandigarh
+- **Sat 20 Nov:** Wedding Ceremony, 11:15 am, Peerzada Farms ·
+  Cocktail Night, 7:00 pm, Hyatt Regency · After Party, 11:30 pm, Hyatt Regency
+- **Sun 21 Nov:** Check-out, 12:00 pm, Hyatt Regency
 
 ## 4. Travel & stay — mixed
 
-### Known from AA
-Our families will provide accommodation for all guests for November 19th and
-20th, 2027 at the
-[Hyatt Centric](https://www.hyatt.com/hyatt-centric/en-US/ixcct-hyatt-centric-sector-17-chandigarh)
-in Sector 17, Chandigarh.
+### Live on the site (Two by Two, 1 Nov 2026)
+Hotel, Flight, E-Visa, and Airport & Venue Transfers blocks are taken verbatim
+from `planner-content.md`. Hotel: [Hyatt Regency](https://www.hyatt.com/hyatt-regency/en-US/ixchr-hyatt-regency-chandigarh).
 
-Our wedding planners will reach out directly to collect RSVP and travel
-details. Closer to the wedding, the team will share hotel booking details and
-coordinate pick-up and drop-off based on guests’ travel plans to and from
-Chandigarh.
+WhatsApp button stays disabled until `PLANNER_WHATSAPP` is set in `script.js`.
+**TODO(launch):** planners' number still missing.
 
-We can't wait to welcome you!
+### Visa research — not on the site
 
-WhatsApp button is on the page. Set `PLANNER_WHATSAPP` in `script.js` (digits
-only, with country code) when we have the number.
-
-## 5. The Lookbook — PLACEHOLDER
-
-Coming soon.
-
-### Visa reference — FAQ only
-
-The standalone Visas section was removed. Keep this research only for the
-existing FAQ answer. Do not send people to third-party “India e-visa” mills.
+The site now uses the planners' short visa answer. This research is kept for
+reference only. Do not send people to third-party “India e-visa” mills.
 
 - **Indian passport:** no visa.
 - **OCI:** lifelong multi-entry visa; travel with current foreign passport + OCI card. [MEA OCI scheme](https://www.mea.gov.in/overseas-citizenship-of-india-scheme)
@@ -80,8 +68,6 @@ existing FAQ answer. Do not send people to third-party “India e-visa” mills.
 - **Pakistani passport or Pakistani origin** (parent/grandparent born in or permanently resident in Pakistan): **not eligible for e-Visa**; regular visa at an Indian Mission (Q1).
 - Scam warning: no official “express fee”; only the .gov.in portal (Q3). Embassy of India, Washington repeats this.
 
-Hotel names, local transport, extra nights: still TBT.
-
 ### Weather — AA copy + climatology
 
 Keep Ananya’s FAQ **verbatim** on the site. The Travel weather block expands it; it must not contradict her numbers.
@@ -91,12 +77,17 @@ Keep Ananya’s FAQ **verbatim** on the site. The Travel weather block expands i
   - Climate-Data.org Chandigarh: Nov 26.0 / 12.2°C, 6 mm, 1 rain day, 9 sun hours, 55% RH.
   - Weather & Climate: 27 / 13°C, 7.5 mm.
   - WorldWeatherOnline: 26 / 14°C, 6 mm, 1 rain day.
-- **Air:** November can get hazy from crop burning. If you’re pregnant or have asthma, bring a mask. No AQI numbers on the page.
+- **Air:** Gentle wording on the site: “The air can turn a little hazy this time of year. If you’re sensitive to air quality, you may like to pack a mask.” Cause is crop burning; not named on the page. No AQI numbers.
 - **Live forecast:** Open-Meteo, Chandigarh coordinates 30.7333 / 76.7794,
   16-day window, no API key. Hidden if the API fails. On 3–4 November 2027 the
   wedding dates should enter the forecast window and highlight automatically.
 
 Do **not** invent train timings. Chandigarh as an e-Visa airport is from the official FAQ, not guesswork.
+
+## 5. The Lookbook — ON HOLD
+Removed from the site and nav (1 Nov 2026) until the lookbook exists. Will be
+added soon; the schedule intro still says “Colour palettes and lookbooks coming
+soon!”
 
 ## 6. Things to Do — TBT / AA
 Cut from the site. Ananya & Amar had nothing written yet and a placeholder
@@ -104,20 +95,13 @@ section with three empty cards read worse than no section. Ananya's notes still
 list the wanted buckets (restaurants, attractions, shopping, hidden gems,
 activities) — rebuild the section if they send real picks.
 
-## 7. FAQs
-
-### Live on the site (AA answered)
-- **Do I need to book my own hotel?** No. Families covering 19–20 Nov at Hyatt Centric Sector 17. RSVP + flights to planners. No guest payment. Live on the site.
-- **What will the weather be like?** November is one of the best times to be in Chandigarh! Expect sunny, pleasant days in the mid-to-high 70s°F (24-27C), with cooler evenings in the low-to-mid 50s°F (10-13C). If you tend to run cold, we recommend bringing a light jacket or shawl for the evenings!
-- **Are plus-ones and/or additional guests allowed?** Unfortunately, we’re unable to accommodate plus-ones or additional guests unless they are specifically named on your invitation.
-- **What are the visa requirements for visiting India?** See Travel § Visa (GoI e-Visa portal). Live on the site.
-
-### Questions listed, no answer yet — not on the site
-- When should I RSVP by?
-- What should I wear?
-- What should I pack?
-- Can I book rooms at the wedding hotels before and/or after the wedding weekend?
-- Is there a Wedding Registry?
+## 7. FAQs — CONFIRMED (Two by Two, 1 Nov 2026)
+All 12 FAQs come from `planner-content.md`, in the planners' order.
+Two exceptions:
+- Weather keeps **10–13°C** evenings. The planners wrote 10–18C, which
+  contradicts “50s°F”.
+- **TODO(launch):** the planners' phone/WhatsApp number is blank in the
+  contact FAQ and shows as “xxx” in the travel-agent FAQ.
 
 ## 8. Our Couple Quiz
 
@@ -133,14 +117,14 @@ site files. There is no standalone Photos section.
 
 Web copies live in `assets/photos/web/`. On the page now:
 - Our Story: City Hall window (`city-hall-window.jpg`), six-photo collage
-  (`collage/`), and the Mumbai engagement (`DSCF1490_cropped.jpg`), each with
+  (`collage/`), and the rooftop engagement portrait (`rooftop.jpg`), each with
   a caption
 - Quiz: matching NYC shirts (`quiz.jpg`)
 
 The other web copies (City Hall kiss/dip, subway, proposal, rooftop kiss,
 Joshua Tree, Indian wedding, night out, Mumbai rooftop, married-in-New-York,
-photo booth, street selfie, `collage/p8091419.jpg`) are not used on the page.
-They are kept for the Lookbook. The name-swapped save-the-date variant is in
+photo booth, street selfie, `DSCF1490_cropped.jpg`, `collage/p8091419.jpg`) are not used on the page.
+They are kept for the future Lookbook. The name-swapped save-the-date variant is in
 `photos-src/`; the live card (Amar named first) is `assets/save-the-date.png`.
 
 ## 9. Additional — TBC

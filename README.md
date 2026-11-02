@@ -24,7 +24,18 @@ On Windows, `serve.ps1` does the same job.
 | `content.md` | Copy source of truth and open questions; mirror edits into `index.html` |
 | `assets/` | Hero image, bloom SVGs, downloadable card, `photos/web/` library |
 | `_herocrop.ps1` | Regenerates `assets/hero-scene-web.jpg` from the card |
-| `photos-src/`, `ananya-website-notes.md` | Originals and planner notes; gitignored |
+| `planner-content.md` | Two by Two's copy for schedule, travel, FAQ (11/1); gitignored |
+| `photos-src/`, `ananya-website-notes.md` | Originals and early notes; gitignored |
+
+## Before launch
+
+Do not go live until these are filled in. `grep -n "TODO(launch)" index.html`
+finds the spots that still need them.
+
+- [ ] Planners' call / WhatsApp number: the contact FAQ and the travel-agent
+      FAQ in `index.html`, plus `PLANNER_WHATSAPP` in `script.js`. That
+      constant is currently **Amar's number as a placeholder**; swap it for
+      the planners'. Also run `grep -n "TODO(launch)" script.js`.
 
 ## Common edits
 
@@ -35,8 +46,7 @@ On Windows, `serve.ps1` does the same job.
   `QUIZ_VERSION` in `quiz.js` so submissions to the Apps Script stay separable.
 - **Photos:** put an optimized copy in `assets/photos/web/` and keep the
   original in `photos-src/`. The web folder is a library, and not every photo
-  in it appears on the page. To swap in a photo for the Lookbook or FAQ
-  placeholder:
+  in it appears on the page. To swap a photo into a section:
 
   ```html
   <figure class="editorial-media" data-reveal="media">
@@ -53,9 +63,12 @@ rows stack into a single column.
 1. Story: copy left, photos right
 2. Celebrations: full-width, two date cards
 3. Travel & Stay: copy left, weather and live forecast right
-4. Lookbook: placeholder left
-5. FAQ: placeholder left
-6. Couple Quiz: centered
+4. FAQ: back-to-back photo left
+5. Couple Quiz: centered
+
+**Lookbook: on hold.** It was removed on 1 Nov 2026 until we have the
+lookbook. To bring it back, add a `<section id="lookbook">` between Travel and
+FAQ, add the nav link, and re-alternate the `section-alt` backgrounds.
 
 The page reads fine without JS. The forecast hides itself if Open-Meteo fails.
 `prefers-reduced-motion` turns off entrances, sway, and parallax.
