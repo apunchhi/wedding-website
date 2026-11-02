@@ -1,7 +1,9 @@
 # Amar & Ananya — Wedding Website
 
 Static site in plain HTML, CSS, and vanilla JS. No build step and no
-dependencies. Pushing to `main` deploys it through GitHub Pages (repo root).
+dependencies. Pushing to `main` deploys it through GitHub Pages (repo root) to
+https://amarandananya.com. DNS is managed in Wix (A records → GitHub Pages IPs,
+`www` CNAME → `apunchhi.github.io`); `CNAME` holds the custom domain.
 
 ## Preview
 

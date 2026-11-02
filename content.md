@@ -30,19 +30,19 @@ He texted Ameera, who offered to pass along Ananya’s number. But, not wanting 
 
 *“It’s okay. I’ll just leave this one up to fate.”*
 
-In February 2023, Ananya attended a [@drinksfirst](https://www.instagram.com/drinksfirst/) event hosted by her friend, Ariana. By coincidence, Amar decided to go out with his friends to that very same event.
+In February 2023, Ananya attended a [@drinks.first](https://www.instagram.com/drinks.first/?hl=en) event hosted by her friend, Ariana. By coincidence, Amar decided to go out with his friends to that very same event.
 
 In a sea of people, music, and LED lights, we ran into each other…again! We finally exchanged numbers and the rest is history.
 
 In November 2025, Amar proposed to Ananya on the rooftop of Quantum Park, and after many years, fate finally got its way.
 
 ## 3. Schedule — CONFIRMED (Two by Two, 1 Nov 2026)
-Source: `planner-content.md`. Intro line: “Colour palettes and lookbooks coming soon!”
+Source: `planner-content.md`. Intro line: “Color palettes and lookbooks coming soon!”
 
 - **Fri 19 Nov:** Check-Ins & Lunch, 12:00 pm, Hyatt Regency Chandigarh ·
   Mehendi Sundowner, 4:30 pm, Sukoon Farmhouse, New Chandigarh
 - **Sat 20 Nov:** Wedding Ceremony, 11:15 am, Peerzada Farms ·
-  Cocktail Night, 7:00 pm, Hyatt Regency · After Party, 11:30 pm, Hyatt Regency
+  Reception, 7:00 pm, Hyatt Regency · After Party, 11:30 pm, Hyatt Regency
 - **Sun 21 Nov:** Check-out, 12:00 pm, Hyatt Regency
 
 ## 4. Travel & stay — mixed
@@ -86,7 +86,7 @@ Do **not** invent train timings. Chandigarh as an e-Visa airport is from the off
 
 ## 5. The Lookbook — ON HOLD
 Removed from the site and nav (1 Nov 2026) until the lookbook exists. Will be
-added soon; the schedule intro still says “Colour palettes and lookbooks coming
+added soon; the schedule intro still says “Color palettes and lookbooks coming
 soon!”
 
 ## 6. Things to Do — TBT / AA

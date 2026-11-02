@@ -1925,6 +1925,34 @@ body.nav-open .planner-contact {
 }
 
 @media (max-width: 760px) {
+  /* icon-only round buttons; the label stays for screen readers */
+  .planner-contact {
+    gap: 0.45rem;
+  }
+
+  .fab {
+    min-width: 0;
+    width: 2.6rem;
+    min-height: 0;
+    height: 2.6rem;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .fab svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .fab span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
   :root {
     --header-h: 4rem;
   }
